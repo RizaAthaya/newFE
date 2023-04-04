@@ -11,7 +11,7 @@ const HomeSec2 = () => {
       <h2 className="text-[#192BC2] text-center mb-[2rem] text-[24px] sm-text-[48px] font-[700] ">
         Informasi Beasiswa
       </h2>
-      <div className="sm:w-[90vw] w-[70vw] mx-auto">
+      <div className="w-[90vw] mx-auto">
         <Slick1/>
       </div>
 

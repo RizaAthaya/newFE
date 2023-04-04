@@ -27,7 +27,7 @@ function App() {
                   <Route path="/" element={<Home />} />
                   <Route path="/team" element={<Team />} />
                   <Route path="/project" element={<Project/>} />
-
+                  <Route path="/pojokbeasiswa" element={<PojokBeasiswa/>}/>
                   <Route element={<AuthRoute />}></Route>
                 </Route>
               </Routes>
@@ -64,6 +64,13 @@ const Team = lazy(() => {
 const Project = lazy(() => {
   return new Promise<{ default: React.ComponentType<any> }>((res) => {
     setTimeout(() => res(import("./pages/Project")), 1500);
+  });
+});
+
+
+const PojokBeasiswa = lazy(() => {
+  return new Promise<{ default: React.ComponentType<any> }>((res) => {
+    setTimeout(() => res(import("./pages/PojokBeasiswa")), 1500);
   });
 });
 

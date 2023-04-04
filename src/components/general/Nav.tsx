@@ -31,10 +31,10 @@ const HoverUnderline = styled.span`
 
 const navigation = [
   { name: "Mentoring", to: "/" },
-  { name: "Pojok Beasiswa", to: "/team" },
+  { name: "Pojok Beasiswa", to: "/pojokbeasiswa" },
   { name: "Komunitas", to: "/project" },
-  { name: "Artikel", to: "/calendar" },
-  { name: "Dashboard", to: "/calendar" },
+  { name: "Artikel", to: "/team" },
+  { name: "Dashboard", to: "/dashboard" },
 ];
 
 const Nav = () => {

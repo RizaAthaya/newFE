@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "../../css/Slick.css";
 
 import Data from "../../utils/Data.json"
 import CardBeasiswa from "../Card/CardBeasiswa";
 
-export default class Slick1 extends Component {
+export default class Slick1 extends React.Component {
   render() {
     var settings = {
       dots: true,
@@ -44,9 +44,9 @@ export default class Slick1 extends Component {
     return (
       <div className="carousel-react">
         <Slider {...settings}>
-        {Data.map((item)=>(
+        {Data.map((item, index)=>(
           <div>
-            <CardBeasiswa tag={item.tag} date={item.date} title={item.title}/>
+            <CardBeasiswa key={index} id={item.id} tag={item.tag} date={item.date} title={item.title}/>
           </div>
         ))}
         </Slider>

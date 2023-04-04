@@ -8,6 +8,7 @@ module.exports = {
     {
       backgroundImage: {
         'home-image': "url('./assets/backgroundHome.svg')",
+        'header': "url('./assets/headline.svg')",
       },
       fontFamily: {
         'inter': 'inter'
