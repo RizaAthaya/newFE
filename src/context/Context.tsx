@@ -9,3 +9,14 @@ export interface tagType {
   setNama: React.Dispatch<React.SetStateAction<Context["nama"]>>,
 }
 
+export interface scholar {
+  name: string;
+  open_registration: string;
+  close_registration: string;
+  provider: string;
+  id: number;
+  tag_level: number;
+  tag_cost: number;
+  tag_country: number;
+}
+

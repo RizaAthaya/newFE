@@ -1,4 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -13,12 +15,32 @@ import "../../css/Swiper1.module.css";
 import { EffectCoverflow, Pagination } from "swiper";
 
 //util
-import Data from "../../utils/Data.json";
+// import Data from "../../utils/Data.json";
 
 //components
 import CardMentor from "../Card/CardMentor";
 
+interface item {
+  name: string,
+  scholar_history: string,
+  study_track: string,
+}
+
 export default function Swiper2() {
+  const [newMentor, setNewMentor] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(
+        "http://localhost:4000/mentor/"
+      );
+      setNewMentor(response.data.data);
+      console.log("yang ini");
+      console.log(response.data.data);
+    }
+    console.log("yang ini lho");
+    fetchData();
+  }, []);
+
   return (
     <>
       <Swiper
@@ -37,9 +59,9 @@ export default function Swiper2() {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper relative"
       >
-        {Data.map((item) => (
+        {newMentor.map((item:item, index) => (
           <SwiperSlide>
-            <CardMentor/>
+            <CardMentor key={index} name={item.name} scholar_history={item.scholar_history} study_track={item.study_track} />
           </SwiperSlide>
         ))}
       </Swiper>

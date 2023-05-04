@@ -19,10 +19,13 @@ const PaginationPB = () => {
           return (
             <CardBeasiswa
               key={index}
-              id={items.id}
-              tag={items.tag}
-              title={items.title}
-              date={items.date}
+              tag_level={items.TagLevel}
+              tag_country={items.TagCountry}
+              tag_cost={items.TagCost}
+              name={items.name}
+              open_registration={items.open_registration}
+              close_registration={items.close_registration}
+              provider={items.provider}
             />
           );
         })}
