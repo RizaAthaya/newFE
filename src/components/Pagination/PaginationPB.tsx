@@ -12,6 +12,8 @@ const PaginationPB = () => {
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = Data.slice(firstPostIndex, lastPostIndex);
+
+  
   return (
     <div className="justify-center h-auto lg:w-[70vw] grid">
       <div className="w-[70vw] flex items-center justify-around flex-wrap">

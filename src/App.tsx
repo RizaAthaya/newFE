@@ -25,7 +25,6 @@ function App() {
               <Routes>
                 <Route element={<SuspenseWrapper />}>
                   <Route path="/" element={<Home />} />
-                  <Route path="/test" element={<Test />} />
                   <Route path="/team" element={<Team />} />
                   <Route path="/project" element={<Project/>} />
                   <Route path="/pojokbeasiswa" element={<PojokBeasiswa/>}/>
@@ -75,13 +74,6 @@ const PojokBeasiswa = lazy(() => {
     setTimeout(() => res(import("./pages/PojokBeasiswa")), 1500);
   });
 });
-
-const Test = lazy(() => {
-  return new Promise<{ default: React.ComponentType<any> }>((res) => {
-    setTimeout(() => res(import("./pages/Test")), 1500);
-  });
-});
-
 
 const Test2 = lazy(() => {
   return new Promise<{ default: React.ComponentType<any> }>((res) => {

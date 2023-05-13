@@ -101,8 +101,25 @@ export default function ScholarCarousel() {
     getTagCost();
     getTagCountries();
   }, []);
-  console.log("Scholarships : ", scholarships);
 
+  scholarships.forEach(item=> {
+    Country.forEach(item2=>{
+      if(item.tag_country === item2.id){
+        TagCountry = item2.name;
+      }
+    })
+    Cost.forEach(item3=>{
+      if(item.tag_cost === item3.id){
+        TagCost = item3.name;
+      }
+    })
+    Level.forEach(item4=>{
+      if(item.tag_level === item4.id){
+        TagLevel = item4.name;
+        console.log("INI TAG LEVEL",TagLevel)
+      }
+    })
+  })
   return (
     <div>
       <Swiper
@@ -129,30 +146,30 @@ export default function ScholarCarousel() {
         className="mySwiper"
       >
         {scholarships.map((item, index) => {
-          {
-            Level.map((tags: tag) => {
-              if (tags.id == item.tag_level) {
-                TagLevel = tags.name;
-                console.log("Tag Level : ",TagLevel);
-              }
-            });
-          }
-          {
-            Cost.map((tags: tag) => {
-              if (tags.id == item.tag_cost) {
-                TagCost = tags.name;
-                console.log(TagCost);
-              }
-            });
-          }
-          {
-            Country.map((tags: tag) => {
-              if (tags.id == item.tag_country) {
-                TagCountry = tags.name;
-                console.log(TagCountry);
-              }
-            });
-          }
+          // {
+          //   Level.map((tags: tag) => {
+          //     if (tags.id == item.tag_level) {
+          //       TagLevel = tags.name;
+          //       console.log("Tag Level : ",TagLevel);
+          //     }
+          //   });
+          // }
+          // {
+          //   Cost.map((tags: tag) => {
+          //     if (tags.id == item.tag_cost) {
+          //       TagCost = tags.name;
+          //       console.log(TagCost);
+          //     }
+          //   });
+          // }
+          // {
+          //   Country.map((tags: tag) => {
+          //     if (tags.id == item.tag_country) {
+          //       TagCountry = tags.name;
+          //       console.log(TagCountry);
+          //     }
+          //   });
+          // }
           return (
             <SwiperSlide>
               <CardBeasiswa
