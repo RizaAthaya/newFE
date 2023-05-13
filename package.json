@@ -16,7 +16,6 @@
     "@mui/material": "^5.11.16",
     "@mui/styles": "^5.12.3",
     "@react-spring/web": "^9.7.2",
-    "@types/react": "^18.2.6",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
     "daisyui": "^2.51.6",
